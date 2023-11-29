@@ -108,34 +108,20 @@ public class UserInterface {
     MenuPrinter.displayMainMenu();
     boolean exit = false;
     while (!exit) {
-      String choice = Scan.scanString();
-        switch (choice) {
-            case PRINT_REGISTER:
-                printItemRegister();
-                waitToReturn();
-                break;
-            case SEARCH_FOR_ITEM:
-                searchRegister();
-                break;
-            case ADD_ITEM:
-                addItem();
-                break;
-            case ALTER_AMOUNT:
-                alterAmountInStock();
-                break;
-            case DELETE_ITEM:
-                deleteItem();
-                break;
-            case EDIT_ITEM:
-                editItem();
-                break;
-            case SORT_REGISTER:
-                sortRegister();
-                break;
-            default:
-                exit = true;
-                break;
+    String choice = Scan.scanString();
+      switch (choice) {
+        case PRINT_REGISTER -> {
+          printItemRegister();
+          waitToReturn();
         }
+        case SEARCH_FOR_ITEM -> searchRegister();
+        case ADD_ITEM -> addItem();
+        case ALTER_AMOUNT -> alterAmountInStock();
+        case DELETE_ITEM -> deleteItem();
+        case EDIT_ITEM -> editItem();
+        case SORT_REGISTER -> sortRegister();
+        default -> exit = true;
+      }
     }
     System.out.println("Exiting Warehouse Management System (W.M.S.)...");
     System.exit(0);
